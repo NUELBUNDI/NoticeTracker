@@ -1,6 +1,14 @@
+import streamlit as st
 import pandas as pd
 from supabase import create_client
 import json
 
-API_URL  = 'https://fwkpdwxvlrkdscfazelk.supabase.co'
-API_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3a3Bkd3h2bHJrZHNjZmF6ZWxrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjExMzY2OTUsImV4cCI6MjAzNjcxMjY5NX0.vZF8P1zilmmp_PrfC4EAp7he4U-_8tELroEypJ3T8V8'
+api_key = st.secrets['supabase']['API_KEY']
+api_url = st.secrets['supabase']['API_URL']
+
+@st.cache_data
+def load_data():
+    supabase = create_client(api_url,api_key)
+    data = supabase.table('notice').select('*').execute().data
+    df = pd.DataFrame(data)
+    return df
