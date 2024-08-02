@@ -16,4 +16,4 @@ df = load_data()
 
 st.markdown('<div class="custom-title"> Contract Tracker Dashboard </div>',unsafe_allow_html=True)
 
-# st.dataframe(df)
+st.markdown('Coming soon..................................')
