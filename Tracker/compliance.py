@@ -12,7 +12,7 @@ def load_css(file_name):
 load_css('assests/style.css')
 
 # Title
-st.markdown('<div class="custom-title"> Group Compliance Dashboard </div>',unsafe_allow_html=True)
+st.markdown('<div class="custom-title"> Group Compliance Notice Tracker Dashboard </div>',unsafe_allow_html=True)
 st.markdown("##### The summary report details the Notices issued by various Revenue Authorities across various Africa Countries. To generate the report for a specific country,\
     kindly select the country of interest from the dropdown menu on the sidebar slider")
 
